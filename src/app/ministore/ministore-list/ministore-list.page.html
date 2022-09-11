@@ -1,0 +1,7 @@
+<ion-grid fixed>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="6" sizeSm="6" sizeMd="4" sizeLg="2" *ngFor="let item of items">
+      <app-ministore-list-item (click)="viewProduct(item)" [data]="item"></app-ministore-list-item>
+    </ion-col>
+  </ion-row>
+</ion-grid>

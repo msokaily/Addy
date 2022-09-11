@@ -1,0 +1,27 @@
+<app-ministore-header></app-ministore-header>
+<div class="ion-padding">
+  <ion-row class="ion-align-items-center">
+    <ion-col size="10">
+      <ion-text color="dark">
+        <div class="h3">Popular categories</div>
+      </ion-text>
+    </ion-col>
+    <ion-col size="2">
+      <ion-button (click)="openFilter()" fill="clear">
+        <ion-img src="assets/imgs/ministore-filter-icon.png" style="width: 30px;"></ion-img>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <app-cats-segment></app-cats-segment>
+</div>
+<ion-content class="ion-text-center">
+  <app-ministore-list></app-ministore-list>
+  <ion-button (click)="checkout()" shape="round" class="checkout-btn" color="success">
+    <ion-icon slot="start" name="cart-outline"></ion-icon>
+    <ion-label style="max-width: 90px;">
+      <div class="h4">Checkout</div>
+      <div class="h6" style="color: #ececec; margin-top: 5px;">2 items - {{120 | mcurrency}}</div>
+    </ion-label>
+  </ion-button>
+  <app-ministore-footer class="ion-padding"></app-ministore-footer>
+</ion-content>

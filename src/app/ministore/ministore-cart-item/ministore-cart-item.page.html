@@ -1,0 +1,39 @@
+<div class="cart-item">
+  <ion-item lines="none">
+    <ion-thumbnail slot="start">
+      <ion-img [src]="item.image"></ion-img>
+    </ion-thumbnail>
+    <div class="content">
+      <ion-label class="name">{{item.name}}</ion-label>
+      <ion-label class="options h5">
+        <ion-text color="medium">
+          {{viewOptions(item.options)}}
+        </ion-text>
+      </ion-label>
+      <ion-label class="delete h5">
+        <ion-text color="secondary" (click)="removeItemClicked()">
+          Delete
+        </ion-text>
+      </ion-label>
+    </div>
+  </ion-item>
+  <div class="row-below">
+    <div class="quantity">
+      <span class="h4">Quantity</span>
+      <div class="quantity-btns">
+        <ion-button (click)="decreaseQuantity(item)" size="small" color="secondary" shape="round">
+          <ion-icon slot="icon-only" name="remove-outline"></ion-icon>
+        </ion-button>
+        <span class="quantity-text">
+          {{item.quantity}}
+        </span>
+        <ion-button (click)="increaseQuantity(item)" size="small" color="secondary" shape="round">
+          <ion-icon slot="icon-only" name="add"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
+    <div class="price">
+      {{item.price | mcurrency}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,78 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{item?.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <swiper [dir]="shared.lang === 'ar' ? 'rtl' : 'ltr'" [config]="swiperOptions">
+    <ng-template swiperSlide *ngFor="let img of (item?.images || [item.image])">
+      <img ionImgViewer [src]="img">
+    </ng-template>
+  </swiper>
+  <div class="title-div">
+    <ion-label class="h3 title">{{item?.name}}</ion-label>
+    <ion-label class="h3 price">
+      <ion-text color="primary">
+        {{item?.price | mcurrency: 'AED '}}
+      </ion-text>
+    </ion-label>
+  </div>
+  <div>
+    <ion-text color="medium">
+      <p>{{item.description}}</p>
+    </ion-text>
+  </div>
+  <div class="ion-padding-top">
+    <ion-text color="dark">
+      <div class="h4 ion-padding-bottom">Size</div>
+    </ion-text>
+    <ion-segment scrollable="true" value="small" (ionChange)="sizeChanged($event)" class="size-input">
+      <ion-segment-button value="small">
+        <ion-label>Small<br>{{ '300' | mcurrency }}</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="medium">
+        <ion-label>Medium<br>{{ '350' | mcurrency }}</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="large">
+        <ion-label>Large<br>{{ '400' | mcurrency }}</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div class="ion-padding-top">
+    <ion-text color="dark">
+      <div class="h4 ion-padding-bottom">Color</div>
+    </ion-text>
+    <ion-segment scrollable="true" value="red" (ionChange)="colorChanged($event)" class="color-input">
+      <ion-segment-button value="red" layout="icon-start">
+        <ion-icon name="ellipse" color="danger"></ion-icon>
+        <ion-label>Red</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="green" layout="icon-start">
+        <ion-icon name="ellipse" color="success"></ion-icon>
+        <ion-label>Green</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div class="ion-padding-top">
+    <ion-text color="dark">
+      <div>Instruction to the seller</div>
+    </ion-text>
+    <ion-item lines="none" class="custom-input ion-margin-top">
+      <ion-icon name="document-text-outline" color="secondary" size="large" slot="start"></ion-icon>
+      <ion-label position="floating">Update instruction here</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+  </div>
+  <div class="ion-padding-top btns ion-margin-bottom">
+    <ion-button (click)="addToCart()" color="tertiary" expand="inline" size="large">
+      Add to Cart
+    </ion-button>
+    <ion-button (click)="buyNow()" expand="inline" size="large">
+      Buy Now
+    </ion-button>
+  </div>
+</ion-content>

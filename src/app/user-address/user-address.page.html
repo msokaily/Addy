@@ -1,0 +1,45 @@
+<div slot="fixed" class="header ion-padding ion-text-center">
+  <div class="spacer" style="height: 40px;"></div>
+  <div>Hi</div>
+  <div class="spacer" style="height: 10px;"></div>
+  <div class="h3"><strong>James Harper</strong></div>
+  <div class="spacer" style="height: 30px;"></div>
+  <div>Welcome back to</div>
+  <div class="spacer" style="height: 20px;"></div>
+  <ion-img src="assets/imgs/logo-white.png" style="height: 78px;"></ion-img>
+  <div class="spacer" style="height: 40px;"></div>
+</div>
+<ion-content class="ion-padding">
+  <div class="top-div ion-padding-top ion-padding-bottom">
+    <span class="h3">
+      Select Your Address
+    </span>
+    <ion-button (click)="addAddress()" slot="end" fill="outline" size="small" class="add-address-btn">
+      <ion-icon slot="start" name="add"></ion-icon>
+      Add new
+    </ion-button>
+  </div>
+  <ion-list lines="none" class="address-list">
+    <ion-item *ngFor="let item of items" [class.selected]="item.selected" (click)="selectAddress(item)" button>
+      <ion-thumbnail>
+        <img src="assets/imgs/logo-thumbnail.png" />
+      </ion-thumbnail>
+      <ion-label>
+        <ion-text color="primary">
+          <p>{{item.name}}</p>
+        </ion-text>
+        <ion-text color="dark">
+          <div class="h3 bold">{{item.address}}</div>
+        </ion-text>
+      </ion-label>
+      <ion-button class="edit-btn" (click)="editAddress(item)" expand="inline" fill="clear" shape="round" size="small">
+        Edit
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<div slot="fixed" class="footer ion-padding">
+  <ion-button (click)="checkout()" class="custom-button" expand="block">
+    Checkout
+  </ion-button>
+</div>

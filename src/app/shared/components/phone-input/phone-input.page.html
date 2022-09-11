@@ -1,0 +1,14 @@
+<div *ngIf="error" style="margin-bottom: -10px;" class="h5">
+    <ion-text color="danger">
+      Please enter a correct phone number!
+  </ion-text>
+  </div>
+<ion-item lines="none" class="custom-input ion-margin-top ion-margin-bottom">
+  <div class="prefix" (click)="openPrefixSelect()">
+    <img [src]="prefix.image">
+    <ion-text color="medium">
+      <div>{{prefix.code}}</div>
+    </ion-text>
+  </div>
+  <ion-input name="phone" (ionBlur)="triggerChanged()" [(ngModel)]="phone" placeholder="5xxxxxxxx"></ion-input>
+</ion-item>

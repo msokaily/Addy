@@ -1,0 +1,67 @@
+<ion-content class="ion-padding">
+  <ion-item class="custom-input" lines="none">
+    <ion-label position="floating">Search</ion-label>
+    <ion-input type="search"></ion-input>
+  </ion-item>
+  <div class="ion-padding-top">
+    <ion-text color="dark">
+      <div class="h4 ion-padding-bottom">Size</div>
+    </ion-text>
+    <ion-segment scrollable="true" value="small" (ionChange)="sizeChanged($event)" class="size-input">
+      <ion-segment-button value="small">
+        <ion-label>Small</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="medium">
+        <ion-label>Medium</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="large">
+        <ion-label>Large</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div class="ion-padding-top">
+    <ion-text color="dark">
+      <div class="h4 ion-padding-bottom">Color</div>
+    </ion-text>
+    <ion-segment scrollable="true" value="red" (ionChange)="colorChanged($event)" class="color-input">
+      <ion-segment-button value="red" layout="icon-start">
+        <ion-icon name="ellipse" color="danger"></ion-icon>
+        <ion-label>Red</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="green" layout="icon-start">
+        <ion-icon name="ellipse" color="success"></ion-icon>
+        <ion-label>Green</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div class="ion-padding-top">
+    <ion-text color="dark">
+      <div class="h4 ion-padding-bottom">Price</div>
+    </ion-text>
+    <ion-range
+      class="price-input"
+      min="0" max="1000"
+      dualKnobs="true"
+      pin="true"
+      [pinFormatter]="pinFormatter"
+      step="1"
+      [value]="{ lower: 150, upper: 700 }"
+      (ionChange)="priceChange($event)">
+    </ion-range>
+  </div>
+  <div class="ion-padding-top">
+    <ion-text color="dark">
+      <div class="h4 ion-padding-bottom">Sort By</div>
+    </ion-text>
+    <ion-item lines="none" class="custom-select">
+      <ion-select interfaceOptions="" interface="action-sheet" placeholder="Select Sort By" class="sort-input">
+        <ion-select-option *ngFor="let item of sortByItems" [value]="item.id">{{item.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </div>
+  <div class="ion-padding-top ion-padding-bottom">
+    <ion-button (click)="submit()" expand="block" class="submit-btn">
+      Done
+    </ion-button>
+  </div>
+</ion-content>

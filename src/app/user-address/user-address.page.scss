@@ -1,0 +1,46 @@
+.header {
+  background-color: var(--ion-color-primary);
+}
+
+ion-content {
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  overflow: hidden;
+}
+
+.footer {
+  background-color: var(--ion-color-light);
+}
+
+.top-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-address-btn {
+  --border-color: var(--default-page-color);
+}
+
+.address-list {
+  ion-item {
+    border-radius: 20px;
+    border: 1px solid var(--ion-color-primary);
+    --padding-start: none;
+    margin-bottom: 15px;
+    --ripple-color: var(--ion-color-secondary);
+    ion-thumbnail {
+      padding: 10px;
+      margin-inline: 5px;
+    }
+    ion-label {
+      div {
+        white-space: normal;
+      }
+    }
+    .edit-btn {
+      position: absolute;
+      bottom: 0;
+      right: 10px;
+    }
+  }
+}

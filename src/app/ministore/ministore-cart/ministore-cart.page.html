@@ -1,0 +1,67 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Shopping Cart</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-no-border ion-padding">
+  <ion-text color="dark">
+    <div class="h4"># items</div>
+  </ion-text>
+  <div class="cart-list">
+    <app-ministore-cart-item
+      *ngFor="let item of items; let index = index;"
+      [item]="item"
+      [index]="index"
+      (removeItem)="removeItem($event)"
+    ></app-ministore-cart-item>
+  </div>
+  <div class="total-div ion-padding-top">
+    <ion-row class="total">
+      <ion-col size="6">Items total</ion-col>
+      <ion-col size="6" class="ion-text-end">{{total | mcurrency}}</ion-col>
+    </ion-row>
+    <ion-row class="total-grand">
+      <ion-col size="6">Grand total</ion-col>
+      <ion-col size="6" class="ion-text-end">{{totalGrand | mcurrency}}</ion-col>
+    </ion-row>
+  </div>
+  <div class="pay-mode">
+    <ion-text color="dark">
+      <div class="h4 ion-margin-top">Payment mode</div>
+    </ion-text>
+    <ion-list>
+      <ion-item mode="ios" lines="none">
+        <ion-label>Cash on delivery</ion-label>
+        <ion-checkbox slot="start" color="success" (ionChange)="paymentChanged($event)" [(ngModel)]="paymentMode" value="cash"></ion-checkbox>
+      </ion-item>
+      <ion-item mode="ios" lines="none">
+        <ion-label>Online Payment</ion-label>
+        <ion-checkbox slot="start" color="success" (ionChange)="paymentChanged($event)" disabled value="online"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="seller-instructions">
+    <ion-text color="dark">
+      <div class="h4 ion-margin-top">Instruction to the seller</div>
+    </ion-text>
+    <ion-list>
+      <ion-item mode="ios" lines="none">
+        <ion-label>Ask for photo</ion-label>
+        <ion-checkbox slot="start" color="success" (ionChange)="instructionsChanged($event)" [(ngModel)]="instructions" value="askforphoto"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="login-div">
+    <ion-text color="dark">
+      <div class="h4 ion-margin-top">Enter your mobile number to proceed</div>
+    </ion-text>
+    <app-phone-input [error]="error" (phoneChanged)="phoneChanged($event)" [(phone)]="userInfo.phone" [(prefixId)]="userInfo.prefixId"></app-phone-input>
+    <ion-button (click)="login()" expand="block" class="custom-button">
+      Login to Continue
+    </ion-button>
+  </div>
+</ion-content>

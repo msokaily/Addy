@@ -1,0 +1,20 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Select Your Country</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-item class="custom-input ion-margin" slot="fixed">
+  <ion-label position="floating">Search Country</ion-label>
+  <ion-input type="search" [(ngModel)]="search"></ion-input>
+</ion-item>
+<ion-content class="ion-padding" scrollY="true">
+  <ion-list lines="none">
+    <ion-item *ngFor="let item of items | filter: ['code', 'name'] : search" (click)="selectCountry(item)" button>
+      <ion-img slot="start" [src]="item.image" [alt]="item.name"></ion-img>
+      <ion-label>
+        {{item.code}} - {{item.name}}
+      </ion-label>
+      <ion-icon *ngIf="selectedItem.id === item.id" slot="end" name="checkmark-circle" color="success"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

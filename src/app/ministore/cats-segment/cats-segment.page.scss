@@ -1,0 +1,16 @@
+ion-segment {
+    ion-segment-button {
+        border-radius: 8px;
+        background-color: white;
+        margin-inline-end: 10px;
+        color: black;
+        font-size: 14px;
+        text-transform: none;
+        --indicator-height: 0;
+    }
+    ion-segment-button.segment-button-checked {
+        background: #C9E0FF;
+        border: 0.5px solid #2787FF;
+        color: #2787FF;
+    }
+}

@@ -1,6 +1,16 @@
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+html:lang('ar') {
+  --ion-font-family: 'Cairo';
+}
+html[lang="en"] {
+  --ion-font-family: 'Rubik';
+}
+
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
@@ -20,20 +30,20 @@
   --ion-color-secondary-tint: #50c8ff;
 
   /** tertiary **/
-  --ion-color-tertiary: #5260ff;
-  --ion-color-tertiary-rgb: 82, 96, 255;
-  --ion-color-tertiary-contrast: #ffffff;
-  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
-  --ion-color-tertiary-shade: #4854e0;
-  --ion-color-tertiary-tint: #6370ff;
+  --ion-color-tertiary: #C9E0FF;
+	--ion-color-tertiary-rgb: 201,224,255;
+	--ion-color-tertiary-contrast: #3880ff;
+	--ion-color-tertiary-contrast-rgb: 56, 128, 255;
+	--ion-color-tertiary-shade: #b1c5e0;
+	--ion-color-tertiary-tint: #cee3ff;
 
   /** success **/
-  --ion-color-success: #2dd36f;
-  --ion-color-success-rgb: 45, 211, 111;
-  --ion-color-success-contrast: #ffffff;
-  --ion-color-success-contrast-rgb: 255, 255, 255;
-  --ion-color-success-shade: #28ba62;
-  --ion-color-success-tint: #42d77d;
+  --ion-color-success: #7FD346;
+	--ion-color-success-rgb: 127,211,70;
+	--ion-color-success-contrast: #ffffff;
+	--ion-color-success-contrast-rgb: 0,0,0;
+	--ion-color-success-shade: #70ba3e;
+	--ion-color-success-tint: #8cd759;
 
   /** warning **/
   --ion-color-warning: #ffc409;
@@ -68,15 +78,17 @@
   --ion-color-medium-tint: #9d9fa6;
 
   /** light **/
-  --ion-color-light: #f4f5f8;
-  --ion-color-light-rgb: 244, 245, 248;
-  --ion-color-light-contrast: #000000;
-  --ion-color-light-contrast-rgb: 0, 0, 0;
-  --ion-color-light-shade: #d7d8da;
-  --ion-color-light-tint: #f5f6f9;
+  --ion-color-light: #ffffff;
+	--ion-color-light-rgb: 255,255,255;
+	--ion-color-light-contrast: #000000;
+	--ion-color-light-contrast-rgb: 0,0,0;
+	--ion-color-light-shade: #e0e0e0;
+	--ion-color-light-tint: #ffffff;
+
+  --default-page-color: #F1F7FF;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: ldark) {
   /*
    * Dark Colors
    * -------------------------------------------

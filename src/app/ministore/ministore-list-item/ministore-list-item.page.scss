@@ -1,0 +1,27 @@
+ion-card {
+    border-radius: 0;
+    box-shadow: none;
+    background: none;
+    padding: 5px;
+    ion-card-content {
+        padding: 5px 0;
+    }
+    ion-img {
+        border-radius: 15px;
+        overflow: hidden;
+    }
+    ion-card-content {
+        display: flex;
+        .title {
+            color: var(--ion-color-dark);
+            text-align: start;
+        }
+        .price {
+            text-align: end;
+            color: var(--ion-color-primary);
+            max-width: -webkit-fill-available;
+            min-width: fit-content;
+            margin-inline-end: 5px;
+        }
+    }
+}

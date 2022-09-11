@@ -1,0 +1,36 @@
+.header {
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #eaeaea;
+  margin-inline-start: 15px;
+  margin-inline-end: 15px;
+  ion-img {
+    width: 155px;
+    margin: 10px auto;
+  }
+}
+
+ion-content {
+  max-height: calc(550px - 200px);
+}
+
+.resend-btn {
+  --padding-top: 0;
+  --padding-bottom: 0;
+  height: auto;
+  --padding-start: 4px;
+  --padding-end: 0;
+  margin-top: -3px;
+}
+
+.inputs-div {
+  display: flex;
+  ion-input {
+    max-width: 55px;
+    min-height: 50px;
+    text-align: center;
+    --padding-start: 0;
+    margin-inline-end: 12px;
+  }
+}

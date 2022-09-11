@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +24,132 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+/* Swiper CSS */
+@import '~swiper/scss';
+@import '~swiper/scss/autoplay';
+@import '~swiper/scss/keyboard';
+@import '~swiper/scss/pagination';
+@import '~swiper/scss/scrollbar';
+@import '~swiper/scss/zoom';
+@import '~@ionic/angular/css/ionic-swiper';
+
+.en-text {
+  font-family: "Rubik";
+}
+.ar-text {
+  font-family: "Cairo";
+}
+
+ion-content.d-p-c {
+  --background: var(--default-page-color);
+}
+
+ion-button {
+  text-transform: none;
+  --box-shadow: none;
+}
+
+.h1 {
+  font-size: 40px;
+}
+.h2 {
+  font-size: 30px;
+}
+.h3 {
+  font-size: 18px;
+}
+.h4 {
+  font-size: 15px;
+}
+.h5 {
+  font-size: 12px !important;
+}
+.h6 {
+  font-size: 10px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+app-ministore {
+  background: var(--default-page-color);
+}
+
+.shop-info-alert {
+  .alert-message {
+    .info-div {
+      text-align: center;
+      margin-bottom: 12px;
+      div:nth-child(1) {
+        color: var(--ion-color-medium);
+        margin-bottom: 5px;
+      }
+      div:nth-child(2) {
+        color: var(--ion-color-dark);
+      }
+    }
+  }
+}
+
+.filter-popover {
+  --min-width: 100%;
+  --min-height: 550px;
+}
+.countries-popover {
+  --min-width: 100%;
+  --min-height: 650px;
+  --max-height: 650px;
+}
+.otp-popover {
+  --min-width: 100%;
+  --max-height: 550px;
+}
+.filter-popover::part(content), .countries-popover::part(content), .otp-popover::part(content) {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  top: initial !important;
+  bottom: 0 !important;
+  left: 0 !important;
+}
+
+.custom-input {
+    --background: var(--default-page-color);
+    border: 0.5px solid #C9E0FF;
+    border-radius: 10px;
+    --color: #0000009e;
+}
+.custom-input:focus {
+    --color: var(--ion-color-dark);
+}
+
+.custom-select {
+    --background: var(--default-page-color);
+    border: 0.5px solid #C9E0FF;
+    border-radius: 10px;
+    --color: #0000009e;
+}
+
+.custom-button {
+  min-height: 45px;
+  --border-radius: 7px;
+}
+
+.ministore-page {
+  background: var(--default-page-color);
+  ion-header {
+    ion-toolbar {
+      --background: var(--default-page-color);
+    }
+  }
+  
+  ion-content {
+    border-radius: 25px !important;
+    overflow: hidden;
+  }
+}
+
+app-user-address {
+  background: var(--ion-color-primary);
+}

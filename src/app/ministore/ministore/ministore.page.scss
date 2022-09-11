@@ -1,0 +1,29 @@
+ion-content {
+    border-radius: 25px;
+    overflow: hidden;
+    --offset-bottom: 226px;
+}
+
+.checkout-btn {
+    position: sticky;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-transform: none;
+    width: 166px;
+    height: 50px;
+    z-index: 5;
+    ion-icon {
+        font-size: 26px;
+    }
+}
+::ng-deep {
+    app-ministore-footer {
+        display: inline-block;
+        width: 100%;
+    }
+    app-ministore-footer, app-ministore-footer > * {
+        background: var(--default-page-color);
+    }
+}

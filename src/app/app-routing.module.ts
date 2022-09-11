@@ -8,9 +8,25 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'ministore',
     pathMatch: 'full'
   },
+  {
+    path: 'ministore',
+    loadChildren: () => import('./ministore/ministore/ministore.module').then( m => m.MinistorePageModule)
+  },
+  {
+    path: 'countries-select',
+    loadChildren: () => import('./shared/components/countries-select/countries-select.module').then( m => m.CountriesSelectPageModule)
+  },
+  {
+    path: 'phone-otp',
+    loadChildren: () => import('./shared/components/phone-otp/phone-otp.module').then( m => m.PhoneOtpPageModule)
+  },
+  {
+    path: 'user-address',
+    loadChildren: () => import('./user-address/user-address.module').then( m => m.UserAddressPageModule)
+  }
 ];
 
 @NgModule({
