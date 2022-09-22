@@ -1,0 +1,16 @@
+<ion-item [class.selected]="selected === item.id" (click)="selectAddress()" button>
+  <ion-thumbnail>
+    <img src="assets/imgs/logo-thumbnail.png" />
+  </ion-thumbnail>
+  <ion-label>
+    <ion-text color="primary">
+      <p>{{item.name}}</p>
+    </ion-text>
+    <ion-text color="dark">
+      <div class="h3 bold">{{item.address}}</div>
+    </ion-text>
+  </ion-label>
+  <ion-button class="edit-btn" *ngIf="editable" (click)="editAddress($event)" expand="inline" fill="clear" shape="round" size="small">
+    Edit
+  </ion-button>
+</ion-item>

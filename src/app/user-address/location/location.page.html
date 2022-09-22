@@ -1,0 +1,15 @@
+<app-map slot="fixed" [(center)]="location" [(addressTxt)]="addressTxt"></app-map>
+<ion-content class="ion-padding">
+    <ion-text color="dark">
+        <div class="h3 ion-margin-top">Address details</div>
+    </ion-text>
+    <ion-text color="medium">
+        <div class="h4 ion-margin-top">Please share your location if you can and that will be easier to find the address</div>
+    </ion-text>
+    <ion-text color="dark">
+        <div class="h4 ion-margin-top">{{addressTxt}}</div>
+    </ion-text>
+    <ion-button (click)="submit()" expand="block" class="custom-button ion-margin-top">
+        Continue
+    </ion-button>
+</ion-content>

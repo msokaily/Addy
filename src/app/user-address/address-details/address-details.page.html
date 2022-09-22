@@ -1,0 +1,54 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Shopping Cart</ion-title>
+  </ion-toolbar>
+</ion-header>
+<div slot="fixed" class="ion-padding address-txt">
+  <ion-text color="dark">
+    <div class="h3">Map Location</div>
+  </ion-text>
+  <ion-item lines="none">
+    <ion-thumbnail slot="start">
+      <ion-img src="assets/imgs/logo-thumbnail.png"></ion-img>
+    </ion-thumbnail>
+    <ion-label>
+      <ion-text color="medium">
+        {{userAddress?.addressTxt}}
+      </ion-text>
+    </ion-label>
+  </ion-item>
+  <div class="spacer" style="height: 30px;"></div>
+</div>
+<ion-content class="ion-no-border ion-padding">
+  <div class="spacer" style="height: 10px;"></div>
+  <ion-text color="dark">
+    <div class="h3 ion-margin-bottom">Your current address details</div>
+    <div class="h4" style="margin-bottom: 10px;">What do you call this address?</div>
+  </ion-text>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <ion-item lines="none" class="custom-input ion-margin-bottom">
+      <ion-label position="floating">Address Label</ion-label>
+      <ion-input formControlName="addressLabel" type="text"></ion-input>
+    </ion-item>
+    <ion-item lines="none" class="custom-input ion-margin-bottom">
+      <ion-label position="floating">House no, villa no, apartment no.</ion-label>
+      <ion-input formControlName="address" type="text"></ion-input>
+    </ion-item>
+    <ion-item lines="none" class="custom-input ion-margin-bottom">
+      <ion-label position="floating">Building name</ion-label>
+      <ion-input formControlName="buildingNo" type="text"></ion-input>
+    </ion-item>
+    <ion-item lines="none" class="custom-input">
+      <ion-label position="floating">Delivery instructions</ion-label>
+      <ion-input formControlName="deliveryInstructions" type="text"></ion-input>
+    </ion-item>
+    <div class="ion-padding-top ion-padding-bottom">
+      <ion-button type="submit" expand="block" class="submit-btn custom-button">
+        Done
+      </ion-button>
+    </div>
+  </form>
+</ion-content>

@@ -120,7 +120,18 @@ export class MinistoreCartPage implements OnInit {
     pop.componentProps.pop = pop;
     pop.onDidDismiss().then(v => {
       if (v.role === 'success') {
-        this.navCtrl.navigateRoot('user-address');
+        const data = {
+          userinfo: this.userInfo,
+          items: this.items,
+          paymendMode: this.paymentMode,
+          instructions: this.instructions,
+          total: this.total
+        };
+        this.navCtrl.navigateRoot('user-address', {
+          queryParams: {
+            cartInfo: JSON.stringify(data)
+          }
+        });
       }
     });
     pop.present();

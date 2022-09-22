@@ -1,0 +1,42 @@
+ion-segment {
+  ion-segment-button {
+    --border-radius: 15px;
+    --border-width: 1px;
+    --border-color: #eeeeea;
+    --border-style: solid;
+    --padding-start: 5px;
+    --padding-end: 5px;
+    --padding-top: 5px;
+    --color: var(--ion-color-primary);
+    min-width: 95px;
+    margin-inline-end: 10px;
+    --indicator-height: 0;
+    --background-checked: var(--ion-color-primary);
+    --color-checked: var(--ion-color-light);
+    text-transform: none;
+    .day-name {
+      margin-top: 10px;
+      color: rgba(37, 37, 37, 0.6);
+    }
+  }
+  ion-segment-button.segment-button-checked {
+    .day-name {
+      color: white;
+    }
+  }
+}
+
+.delivery-type {
+  display: flex;
+  justify-content: space-around;
+  ion-item {
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: fit-content;
+  }
+}
+
+.submit-btn {
+  background: var(--ion-color-light);
+}

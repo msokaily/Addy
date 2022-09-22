@@ -26,6 +26,22 @@ const routes: Routes = [
   {
     path: 'user-address',
     loadChildren: () => import('./user-address/user-address.module').then( m => m.UserAddressPageModule)
+  },
+  {
+    path: 'choose-time',
+    loadChildren: () => import('./choose-time/choose-time.module').then( m => m.ChooseTimePageModule)
+  },
+  {
+    path: 'address-item',
+    loadChildren: () => import('./shared/components/address-item/address-item.module').then( m => m.AddressItemPageModule)
+  },
+  {
+    path: 'success',
+    loadChildren: () => import('./success/success.module').then( m => m.SuccessPageModule)
+  },
+  {
+    path: 'map',
+    loadChildren: () => import('./shared/components/map/map.module').then( m => m.MapPageModule)
   }
 ];
 

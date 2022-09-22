@@ -10,15 +10,21 @@
           {{viewOptions(item.options)}}
         </ion-text>
       </ion-label>
-      <ion-label class="delete h5">
+      <ion-label class="delete h5" *ngIf="!preview">
         <ion-text color="secondary" (click)="removeItemClicked()">
           Delete
         </ion-text>
       </ion-label>
+      <div class="quantity ion-padding-top" *ngIf="preview">
+        <span class="h4">Quantity: </span>
+        <span class="quantity-text" *ngIf="preview">
+          {{item.quantity}}
+        </span>
+      </div>
     </div>
   </ion-item>
   <div class="row-below">
-    <div class="quantity">
+    <div class="quantity" *ngIf="!preview">
       <span class="h4">Quantity</span>
       <div class="quantity-btns">
         <ion-button (click)="decreaseQuantity(item)" size="small" color="secondary" shape="round">
@@ -32,6 +38,7 @@
         </ion-button>
       </div>
     </div>
+    <div class="empty-div" *ngIf="preview"></div>
     <div class="price">
       {{item.price | mcurrency}}
     </div>

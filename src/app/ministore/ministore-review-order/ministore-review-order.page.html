@@ -1,0 +1,86 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="choose-time"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Review Order</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-no-border ion-padding">
+  <ion-text color="dark">
+    <div class="h4"># items</div>
+  </ion-text>
+  <div class="cart-list">
+    <app-ministore-cart-item
+      *ngFor="let item of order?.cartInfo?.items; let index = index;"
+      [item]="item"
+      [index]="index"
+      [preview]="true"
+    ></app-ministore-cart-item>
+  </div>
+  <div class="total-div ion-padding-top">
+    <ion-row class="total">
+      <ion-col size="6">Items total</ion-col>
+      <ion-col size="6" class="ion-text-end">{{order.cartInfo?.total | mcurrency}}</ion-col>
+    </ion-row>
+    <ion-row class="total">
+      <ion-col size="6">Delivery fee</ion-col>
+      <ion-col size="6" class="ion-text-end">{{deliveryFee | mcurrency}}</ion-col>
+    </ion-row>
+    <ion-row class="total">
+      <ion-col size="6">VAT</ion-col>
+      <ion-col size="6" class="ion-text-end">{{vat | mcurrency}}</ion-col>
+    </ion-row>
+    <ion-row class="total-grand">
+      <ion-col size="6">Grand total</ion-col>
+      <ion-col size="6" class="ion-text-end">{{totalGrand | mcurrency}}</ion-col>
+    </ion-row>
+  </div>
+  <div class="pay-mode">
+    <ion-text color="dark">
+      <div class="h4 ion-margin-top bold">Payment mode</div>
+    </ion-text>
+    <ion-list>
+      <ion-item mode="ios" lines="none" class="checkbox-item">
+        <ion-label>Cash on delivery</ion-label>
+        <ion-checkbox slot="start" color="success" disabled [checked]="true" value="cash"></ion-checkbox>
+      </ion-item>
+      <ion-item mode="ios" lines="none" class="checkbox-item" *ngIf="false">
+        <ion-label>Online Payment</ion-label>
+        <ion-checkbox slot="start" color="success" disabled value="online"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="seller-instructions">
+    <ion-text color="dark">
+      <div class="h4 ion-margin-top bold">Instruction to the seller</div>
+    </ion-text>
+    <ion-list>
+      <ion-item mode="ios" lines="none" class="checkbox-item">
+        <ion-label>Ask for photo</ion-label>
+        <ion-checkbox slot="start" color="success" disabled [checked]="true" value="askforphoto"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="delivery-convenience">
+    <ion-text color="dark">
+      <div class="h4 ion-margin-top bold">Delivery Convenience</div>
+    </ion-text>
+    <ion-text color="medium">
+      <p [innerHTML]="deliveryTime | safeHtml"></p>
+    </ion-text>
+  </div>
+  <div class="spacer" style="height: 20px;"></div>
+  <div class="address" style="padding: 1px;">
+    <ion-list lines="none" class="address-list">
+      <app-address-item [item]="order?.address" [editable]="false"></app-address-item>
+    </ion-list>
+  </div>
+  <div class="spacer" style="height: 20px;"></div>
+  <div class="login-div">
+    <ion-button (click)="submit()" size="large" expand="block" class="custom-button">
+      Confirm Order
+    </ion-button>
+  </div>
+</ion-content>

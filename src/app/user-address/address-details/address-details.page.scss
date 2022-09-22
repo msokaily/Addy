@@ -1,0 +1,16 @@
+.address-txt {
+  ion-item {
+    --background: none;
+    --padding-start: 0;
+    margin-top: 5px;
+    ion-thumbnail {
+      width: 34px;
+      height: 34px;
+      margin: 0;
+      margin-inline-end: 20px;
+    }
+    ion-label {
+      white-space: normal;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.header {
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #eaeaea;
+    margin-inline-start: 15px;
+    margin-inline-end: 15px;
+    ion-img {
+      width: 155px;
+      margin: 10px auto;
+    }
+  }
+  
+  ion-content {
+    max-height: calc(750px - 200px);
+  }

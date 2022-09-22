@@ -1,0 +1,26 @@
+.total-div {
+    .total {
+        color: var(--ion-color-medium);
+        font-size: 14px;
+    }
+    .total-grand {
+        > ion-col:nth-child(2) {
+            color: var(--ion-color-primary);
+        }
+    }
+}
+
+.pay-mode, .seller-instructions {
+    ion-item {
+        border: 1px solid #eaeaea;
+        border-radius: 10px;
+        margin-top: 10px;
+        width: fit-content;
+    }
+}
+
+.checkbox-item {
+    ion-checkbox, ion-label {
+        opacity: 1 !important;
+    }
+}

@@ -27,7 +27,7 @@ export class MinistorePage implements OnInit {
     pop.present();
   }
   checkout() {
-    this.navCtrl.navigateForward(['ministore', 'ministore-cart']);
+    this.navCtrl.navigateForward(['ministore', 'cart']);
   }
 
 }

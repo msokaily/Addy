@@ -9,6 +9,7 @@ export class MinistoreCartItemPage implements OnInit {
 
   @Input() item: any;
   @Input() index: any;
+  @Input() preview = false;
   @Output() removeItem = new EventEmitter();
 
   constructor() { }

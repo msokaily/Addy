@@ -1,0 +1,5 @@
+<swiper #swiper class="time-select-swiper" [config]="swiperOptions" (swiper)="onSwiper($event)" (slideChange)="changed($event)">
+  <ng-template swiperSlide *ngFor="let time of times">
+    <div [innerHTML]="time | timeStyle"></div>
+  </ng-template>
+</swiper>

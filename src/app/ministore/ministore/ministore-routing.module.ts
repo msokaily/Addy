@@ -9,16 +9,20 @@ const routes: Routes = [
     component: MinistorePage
   },
   {
-    path: 'ministore-product',
+    path: 'product',
     loadChildren: () => import('../ministore-product/ministore-product.module').then( m => m.MinistoreProductPageModule)
   },
   {
-    path: 'ministore-cart',
+    path: 'cart',
     loadChildren: () => import('../ministore-cart/ministore-cart.module').then( m => m.MinistoreCartPageModule)
   },
   {
-    path: 'ministore-filter',
+    path: 'filter',
     loadChildren: () => import('../ministore-filter/ministore-filter.module').then( m => m.MinistoreFilterPageModule)
+  },
+  {
+    path: 'review-order',
+    loadChildren: () => import('../ministore-review-order/ministore-review-order.module').then( m => m.MinistoreReviewOrderPageModule)
   }
 ];
 

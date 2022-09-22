@@ -1,0 +1,14 @@
+.logo {
+    ion-img {
+        margin: auto;
+        width: 175px;
+    }
+}
+
+.install-btn {
+    width: 250px;
+    margin: auto;
+    --padding-start: 0;
+    --inner-padding-end: 0;
+    --border-radius: 10px;
+}

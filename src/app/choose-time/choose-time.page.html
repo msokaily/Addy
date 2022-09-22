@@ -1,0 +1,51 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="user-address"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Convenience</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-no-border ion-padding">
+  <div class="ion-padding-bottom">
+    <ion-list lines="none" class="delivery-type">
+      <ion-item mode="ios">
+        <ion-label>ASAP</ion-label>
+        <ion-checkbox #asapCheckbox slot="start" color="success" (ionChange)="deliveryTypeChanged($event)" [checked]="form.deliveryType === 1" [value]="1"></ion-checkbox>
+      </ion-item>
+      <ion-item mode="ios">
+        <ion-label>Schedule</ion-label>
+        <ion-checkbox #scheduleCheckbox slot="start" color="success" (ionChange)="deliveryTypeChanged($event)" [checked]="form.deliveryType === 2" [value]="2"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="ion-padding-bottom ion-padding-top">
+    <div class="h3 ion-margin-bottom">Day</div>
+    <ion-segment class="days-segment" [value]="dayIndex" [scrollable]="true" (ionChange)="dayChanged($event)">
+      <ion-segment-button *ngFor="let day of days; let index = index;" [value]="index">
+        <ion-label>
+          <div class="h2 day-number">{{day.day}}</div>
+          <div class="day-name">{{day.dayName}}</div>
+        </ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div class="ion-padding-bottom ion-padding-top">
+    <div class="h3 ion-margin-bottom">Time</div>
+    <ion-row style="align-items: center;">
+      <ion-col size="5.5">
+        <app-time-select (timeChange)="timeFromChanged($event)" [day]="form.day" [(time)]="form.fromTime"></app-time-select>
+      </ion-col>
+      <ion-col size="1" class="ion-text-center">to</ion-col>
+      <ion-col size="5.5">
+        <app-time-select (timeChange)="timeToChanged($event)" [day]="form.day" [(time)]="form.toTime"></app-time-select>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
+<div slot="fixed" class="ion-padding submit-btn">
+  <ion-button (click)="submit()" size="large" class="custom-button" expand="block">
+    Continue
+  </ion-button>
+</div>

@@ -1,0 +1,41 @@
+<div class="ion-padding ion-text-center">
+  <div class="spacer" style="height: 10vh;"></div>
+  <div class="logo">
+    <ion-img src="assets/imgs/logo-circle.png"></ion-img>
+  </div>
+  <ion-text color="success">
+    <div class="h2 ion-margin-top">Success!</div>
+  </ion-text>
+  <ion-text color="medium">
+    <div class="h4 ion-margin-top" style="max-width: 60%; margin-inline: auto;">Aiwa...It’s a nice order!
+      it will arrive soon.</div>
+  </ion-text>
+  <ion-text color="dark">
+    <div class="h4 ion-margin-top" style="max-width: 90%; margin-inline: auto;">
+      Expect your delivery by:
+      <div style="margin-top: 5px;" [innerHTML]="deliveryTime | safeHtml"></div>
+    </div>
+  </ion-text>
+  <div class="spacer" style="height: 30px;"></div>
+  <ion-button (click)="changePaymentMethod()" expand="inline" fill="clear" shape="round" style="text-decoration: underline;">
+    Change payment method
+  </ion-button>
+</div>
+<ion-content class="ion-padding ion-text-center">
+  <ion-text color="dark">
+    <p class="h4 bold">Your order is safe with "Addy.ae"</p>
+  </ion-text>
+  <ion-text color="medium">
+    <p class="h4">or install Addy</p>
+  </ion-text>
+  <div class="ion-padding ion-text-center">
+    <ion-item button lines="none" class="install-btn">
+      <ion-img src="assets/imgs/install-app-btn.png"></ion-img>
+    </ion-item>
+  </div>
+  <div class="ion-padding ion-text-center">
+    <ion-button (click)="goMinistore()" expand="inline" fill="clear" shape="round">
+      Make another order ?
+    </ion-button>
+  </div>
+</ion-content>

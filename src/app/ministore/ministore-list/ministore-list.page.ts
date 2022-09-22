@@ -74,7 +74,7 @@ export class MinistoreListPage implements OnInit {
   }
 
   viewProduct(product) {
-    this.navCtrl.navigateForward(['ministore', 'ministore-product'], {
+    this.navCtrl.navigateForward(['ministore', 'product'], {
       queryParams: {
         item: JSON.stringify(product)
       }

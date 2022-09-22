@@ -7,17 +7,19 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
-import { FilterPipe } from './pipes/filter/filter.pipe';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot({
-      mode: 'md'
+      mode: 'md',
+      backButtonIcon: 'chevron-back-outline'
     }),
     AppRoutingModule,
-    NgxIonicImageViewerModule
+    NgxIonicImageViewerModule,
+    GoogleMapsModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

@@ -26,13 +26,13 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 /* Swiper CSS */
-@import '~swiper/scss';
-@import '~swiper/scss/autoplay';
-@import '~swiper/scss/keyboard';
-@import '~swiper/scss/pagination';
-@import '~swiper/scss/scrollbar';
-@import '~swiper/scss/zoom';
-@import '~@ionic/angular/css/ionic-swiper';
+@import "~swiper/scss";
+@import "~swiper/scss/autoplay";
+@import "~swiper/scss/keyboard";
+@import "~swiper/scss/pagination";
+@import "~swiper/scss/scrollbar";
+@import "~swiper/scss/zoom";
+@import "~@ionic/angular/css/ionic-swiper";
 
 .en-text {
   font-family: "Rubik";
@@ -51,10 +51,10 @@ ion-button {
 }
 
 .h1 {
-  font-size: 40px;
+  font-size: 32px;
 }
 .h2 {
-  font-size: 30px;
+  font-size: 26px;
 }
 .h3 {
   font-size: 18px;
@@ -99,14 +99,21 @@ app-ministore {
 }
 .countries-popover {
   --min-width: 100%;
-  --min-height: 650px;
-  --max-height: 650px;
+  --min-height: 550px;
+  --max-height: 100%;
 }
 .otp-popover {
   --min-width: 100%;
   --max-height: 550px;
 }
-.filter-popover::part(content), .countries-popover::part(content), .otp-popover::part(content) {
+.address-popover {
+  --min-width: 100%;
+  --max-height: 750px;
+}
+.filter-popover::part(content),
+.countries-popover::part(content),
+.address-popover::part(content),
+.otp-popover::part(content) {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   top: initial !important;
@@ -115,25 +122,45 @@ app-ministore {
 }
 
 .custom-input {
-    --background: var(--default-page-color);
-    border: 0.5px solid #C9E0FF;
-    border-radius: 10px;
-    --color: #0000009e;
+  --background: var(--default-page-color);
+  border: 0.5px solid #c9e0ff;
+  border-radius: 10px;
+  --color: #0000009e;
 }
 .custom-input:focus {
-    --color: var(--ion-color-dark);
+  --color: var(--ion-color-dark);
+}
+
+.custom-input-1 {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  ion-label {
+    margin-bottom: 20px !important;
+    font-size: 24px !important;
+  }
+  ion-input {
+    --background: var(--default-page-color);
+    border: 0.5px solid #c9e0ff;
+    border-radius: 10px;
+    --color: #0000009e;
+    --padding-start: 15px !important;
+    --padding-end: 15px !important;
+    --padding-top: 15px !important;
+    --padding-bottom: 15px !important;
+  }
 }
 
 .custom-select {
-    --background: var(--default-page-color);
-    border: 0.5px solid #C9E0FF;
-    border-radius: 10px;
-    --color: #0000009e;
+  --background: var(--default-page-color);
+  border: 0.5px solid #c9e0ff;
+  border-radius: 10px;
+  --color: #0000009e;
 }
 
 .custom-button {
-  min-height: 45px;
+  min-height: 54px;
   --border-radius: 7px;
+  font-size: 16px;
 }
 
 .ministore-page {
@@ -143,13 +170,34 @@ app-ministore {
       --background: var(--default-page-color);
     }
   }
-  
+
   ion-content {
-    border-radius: 25px !important;
+    border-top-left-radius: 30px !important;
+    border-top-right-radius: 30px !important;
     overflow: hidden;
   }
 }
 
 app-user-address {
   background: var(--ion-color-primary);
+}
+
+.custom-map-control-button {
+  width: fit-content;
+  background: #F5F5F8;
+  border-radius: 10px;
+  box-shadow: 0 0 5px -3px black;
+  padding: 7px 10px;
+  color: var(--ion-color-primary);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin-inline-end: 15px;
+  margin-bottom: 20px;
+}
+
+.custom-back-button-control {
+  background: transparent;
+  top: 25px !important;
+  left: 15px !important;
 }
