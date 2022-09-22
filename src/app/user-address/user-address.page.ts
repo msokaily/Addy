@@ -67,6 +67,11 @@ export class UserAddressPage implements OnInit {
     const pop = await this.openAddressPop();
     pop.onDidDismiss().then(v => {
       console.log('Address Result Added: ', v);
+      if (v.role === 'success') {
+        this.navCtrl.navigateForward(['location'], {
+          relativeTo: this.route
+        });
+      }
     });
   }
 
@@ -74,9 +79,11 @@ export class UserAddressPage implements OnInit {
     const pop = await this.openAddressPop(item?.user);
     pop.onDidDismiss().then(v => {
       console.log('Address Result Edit: ', v);
-      this.navCtrl.navigateForward(['location'], {
-        relativeTo: this.route
-      });
+      if (v.role === 'success') {
+        this.navCtrl.navigateForward(['location'], {
+          relativeTo: this.route
+        });
+      }
     });
   }
 
